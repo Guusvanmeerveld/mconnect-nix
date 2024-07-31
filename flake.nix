@@ -23,8 +23,11 @@
     // flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      packages = {
-        mconnect = pkgs.callPackage ./package.nix {};
+      packages = let
+        package = pkgs.callPackage ./package.nix {};
+      in {
+        mconnect = package;
+        default = package;
       };
     });
 }
