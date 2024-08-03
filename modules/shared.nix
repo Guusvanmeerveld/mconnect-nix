@@ -93,7 +93,7 @@ in {
     };
 
     commands = lib.mkOption {
-      type = lib.types.listOf lib.types.submodule {
+      type = lib.types.listOf (lib.types.submodule {
         options = {
           name = lib.mkOption {
             type = lib.types.str;
@@ -105,7 +105,8 @@ in {
             description = "The command to run on the host";
           };
         };
-      };
+      });
+      
       description = "Adds commands that can be ran from the connected device";
     };
   };

@@ -39,7 +39,7 @@ When using NixOS, it is almost the same:
 Home-Manager:
 
 ```nix
-{
+ { pkgs, inputs, ... }: {
     imports = [inputs.mconnect-nix.homeManagerModules.default];
 
     programs.mconnect = {
@@ -58,6 +58,13 @@ Home-Manager:
                 # Can be any of 'phone', 'tablet' or 'computer'. 'phone' is default.
                 type = "tablet";
             }
+        ];
+
+        commands = [
+          {
+            name = "Open Firefox";
+            run = "${pkgs.firefox}/bin/firefox";
+          }
         ];
     };
 }
