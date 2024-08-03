@@ -5,7 +5,7 @@
 with pkgs;
   stdenv.mkDerivation rec {
     pname = "mconnect";
-    version = "0.0";
+    version = "0.3";
 
     src = fetchFromGitHub {
       owner = "grimpy";
