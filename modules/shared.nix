@@ -106,7 +106,8 @@ in {
           };
         };
       });
-      
+
+      default = [];
       description = "Adds commands that can be ran from the connected device";
     };
   };
