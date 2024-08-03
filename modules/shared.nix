@@ -19,6 +19,12 @@
         devices =
           lib.concatStringsSep ";" (map (device: device.id) userSettings.devices);
       };
+
+      commands = builtins.listToAttrs (map (command: {
+          name = command.name;
+          value = command.run;
+        })
+        userSettings.commands);
     }
     // builtins.listToAttrs (map (device: {
         name = device.id;
@@ -86,7 +92,22 @@ in {
       description = "Extra config, in case a desired option is missing";
     };
 
-    # commands =
+    commands = lib.mkOption {
+      type = lib.types.listOf lib.types.submodule {
+        options = {
+          name = lib.mkOption {
+            type = lib.types.str;
+            description = "The commands name";
+          };
+
+          run = lib.mkOption {
+            type = lib.types.str;
+            description = "The command to run on the host";
+          };
+        };
+      };
+      description = "Adds commands that can be ran from the connected device";
+    };
   };
 
   settings = ''
