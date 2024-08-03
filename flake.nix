@@ -19,6 +19,11 @@
       nixosModules = {
         default = import ./modules/nixos.nix;
       };
+      overlays = {
+        mconnect = final: _prev: {
+          mconnect = self.packages."${final.system}".default;
+        };
+      };
     }
     // flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
