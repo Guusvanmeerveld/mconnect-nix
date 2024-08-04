@@ -20,6 +20,11 @@ with pkgs;
 
     meta = with lib; {
       description = "KDE Connect protocol implementation in Vala/C ";
+      license = licenses.gpl2;
+      homepage = "https://github.com/grimpy/mconnect";
+
+      mainProgram = "mconnect";
+
       platforms = platforms.linux;
     };
   }
