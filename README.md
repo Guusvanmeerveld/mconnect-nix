@@ -1,6 +1,6 @@
 # MConnect for NixOS
 
-MConnect is a cli program which aims to implement the KDE connect protocol so non-KDE users are also able to connect to their phones from the desktop. This repo contains a Nix flake that makes it easier to use this program on NixOS. It packages the program and has modules for both Home-Manager and NixOS.
+[MConnect](https://github.com/Guusvanmeerveld/mconnect-nix) is a cli program which aims to implement the KDE connect protocol so non-KDE users are also able to connect to their phones from the desktop. This repo contains a Nix flake that makes it easier to use this program on NixOS. It packages the program and has modules for both Home-Manager and NixOS.
 
 ## Installation
 
