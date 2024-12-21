@@ -9,7 +9,7 @@ in {
     programs.mconnect = {
       openFirewall = lib.mkOption {
         type = lib.types.bool;
-        default = cfg.enable;
+        default = false;
         description = "Enable default firewall ports for basic functionality";
       };
     };
